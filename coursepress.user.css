@@ -63,4 +63,22 @@
     font-size: 1.2em !important;
     color: #bed6f4 !important;
   }
+
+  a.previousBtn *,
+  a.nextBtn * {
+    background-color: transparent !important;
+  }
+
+  a.previousBtn:hover,
+  a.nextBtn:hover {
+    background-color: #3e3e3e !important;
+  }
+
+  #to-coursepress * {
+    background-color: transparent !important;
+  }
+
+  #to-coursepress:hover {
+    background-color: #3e3e3e !important;
+  }
 }

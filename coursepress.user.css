@@ -1,0 +1,65 @@
+/* ==UserStyle==
+@name Coursepress Dark
+@namespace Waalrus
+@version 0.1
+@homepageURL https://github.com/mWalrus/Coursepress-Dark
+@updateURL https://github.com/mWalrus/Coursepress-Dark/courespress.user.css
+@author Waalrus
+==UserStyle==*/
+@-moz-document domain("coursepress.lnu.se") {
+  * {
+    background-color: #1e1e1e !important;
+    color: white !important;
+    border-color: gray !important;
+    font-family: sans-serif;
+  }
+
+  a {
+    color: #88bfff !important;
+  }
+  a:hover {
+    color: #d4e8ff !important;
+  }
+
+  .message-box-header,
+  .message-box-header *,
+  .entry-content h2 {
+    background-color: #313131 !important;
+  }
+
+  .entry-byline,
+  .entry-byline * {
+    color: #bbb !important;
+  }
+
+  footer#header-footer {
+    background-color: #353535 !important;
+  }
+
+  .question .message-box-content,
+  .question .message-box-content * {
+    background-color: #262b33 !important;
+  }
+
+  #footer ul li:last-of-type,
+  #footer ul li:last-of-type * {
+    background-color: #0d0d0d !important;
+  }
+
+  .message-box-content dl:first-of-type {
+    border-bottom: 1px solid gray;
+  }
+
+  .message-box-content dl dt {
+    font-weight: bold !important;
+    font-size: 1.1em !important;
+    color: #a8a8a8 !important;
+    text-decoration: underline !important;
+  }
+
+  .message-box-content dl dd:first-of-type {
+    text-align: center !important;
+    font-size: 1.2em !important;
+    color: #bed6f4 !important;
+  }
+}

@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name Coursepress Dark
 @namespace Waalrus
-@version 0.5.0
+@version 0.5.6
 @homepageURL https://github.com/mWalrus/Coursepress-Dark
 @updateURL https://github.com/mWalrus/Coursepress-Dark/courespress.user.css
 @license GPL-3.0
@@ -19,6 +19,7 @@
     --text-color: #d9d9d9;
     --border-color: #494848;
     --rounded-card-color: #0d0d0d;
+    --nav-hover-color: #292929;
   }
   * {
     background-color: var(--main-bg-color) !important;
@@ -27,6 +28,7 @@
     font-family: 'Open Sans', sans-serif;
   }
 
+  /* header font */
   h1,
   h1 *,
   h2,
@@ -42,8 +44,17 @@
     font-family: 'Montserrat', sans-serif;
   }
 
+  /* removing background on interfering elements */
   #cp-slider-top,
-  #cp-slider-top * {
+  #cp-slider-top *,
+  #bp-default #container *,
+  a.previousBtn *,
+  a.nextBtn *,
+  #to-coursepress *,
+  #cp-clipper-top .tab,
+  #cp-clipper-top .tab *,
+  .sideBarWrapper *,
+  #menu-main-nav-menu h3 * {
     background-color: transparent !important;
   }
 
@@ -58,13 +69,11 @@
     background: none;
   }
 
+  /* text color of start page navigation buttons,
+  sets color of current tab button */
   #bp-default #header #navigation #nav li.current_page_item,
   #bp-default #header #navigation #nav li.current_page_item * {
     background-color: #2f3f75 !important;
-  }
-
-  #bp-default #container * {
-    background-color: transparent !important;
   }
 
   #bp-default #container {
@@ -76,10 +85,15 @@
     background-color: #292929 !important;
   }
 
-  .generic-button.blog-button.visit a,
+  /* ================ currently not working ================== */
   input[type='submit'] {
-    background: none !important;
+    background: none;
   }
+
+  input[type='submit']:hover {
+    background: black !important;
+  }
+  /* ========================================================= */
 
   .tab ul.login {
     float: none;
@@ -117,14 +131,6 @@
     background-color: #363636 !important;
   }
 
-  #sidebar-wp-submit {
-    background: #363e53 !important;
-  }
-
-  #sidebar-wp-submit:hover {
-    background-color: #20242f !important;
-  }
-
   a {
     color: var(--link-color) !important;
   }
@@ -140,21 +146,13 @@
     background-color: var(--header-color) !important;
   }
 
-  #menu-main-nav-menu h3 * {
-    background-color: transparent !important;
-  }
-
-  /*
-  tiny bylines under entries on course pages
-  */
+  /* tiny bylines under entries on course pages */
   .entry-byline,
   .entry-byline * {
     color: #bbb !important;
   }
 
-  /*
-  The "Annu en webbplats som drivs av coursepress" tag in the footer
-  */
+  /* The "Ännu en webbplats som drivs av coursepress" tag in the footer */
   #footer ul li:last-of-type,
   #footer ul li:last-of-type * {
     background-color: var(--rounded-card-color) !important;
@@ -171,9 +169,7 @@
     text-decoration: underline;
   }
 
-  /*
-  Splits off each contact in the contact section listed under certain courses
-  */
+  /* Splits off each contact in the contact section listed under certain courses */
   .message-box-content dl:first-of-type {
     border-bottom: 1px solid gray;
   }
@@ -194,26 +190,15 @@
     padding-top: 1em;
   }
 
-  a.previousBtn *,
-  a.nextBtn * {
-    background-color: transparent !important;
-  }
-
   a.previousBtn:hover,
   a.nextBtn:hover {
-    background-color: #3e3e3e !important;
+    background-color: var(--nav-hover-color) !important;
   }
 
   #to-coursepress a:hover {
-    background: linear-gradient(to right, #292929, transparent);
+    background: linear-gradient(to right, var(--nav-hover-color), transparent);
   }
 
-  #to-coursepress *,
-  #cp-clipper-top .tab,
-  #cp-clipper-top .tab *,
-  .sideBarWrapper * {
-    background-color: transparent !important;
-  }
   .sideBarWrapper {
     background-color: #222 !important;
   }

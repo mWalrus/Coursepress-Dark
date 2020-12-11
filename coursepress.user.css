@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name Coursepress Dark
 @namespace Waalrus
-@version 0.6.0
+@version 0.6.1
 @homepageURL https://github.com/mWalrus/Coursepress-Dark
 @updateURL https://github.com/mWalrus/Coursepress-Dark/courespress.user.css
 @license GPL-3.0
@@ -75,7 +75,7 @@
   a.button,
   a.group-button {
     background: none !important;
-    background-color: none !important;
+    background-color: transparent !important;
   }
 
   a.button:hover,

@@ -7,46 +7,173 @@
 @license GPL-3.0
 @author Waalrus
 ==/UserStyle== */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
 @-moz-document domain("coursepress.lnu.se") {
+  :root {
+    --main-bg-color: #1e1e1e;
+    --link-color: #88bfff;
+    --link-hover-color: #ca71f7;
+    --header-color: #353535;
+    --question-box-color: #262b33;
+    --text-color: #d9d9d9;
+    --border-color: #494848;
+    --rounded-card-color: #0d0d0d;
+  }
   * {
-    background-color: #1e1e1e !important;
-    color: white !important;
-    border-color: gray !important;
-    font-family: sans-serif;
+    background-color: var(--main-bg-color) !important;
+    color: var(--text-color) !important;
+    border-color: var(--border-color) !important;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1,
+  h1 *,
+  h2,
+  h2 *,
+  h3,
+  h3 *,
+  h4,
+  h4 *,
+  h5,
+  h5 *,
+  h6,
+  h6 * {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  #cp-slider-top,
+  #cp-slider-top * {
+    background-color: transparent !important;
+  }
+
+  #bp-default,
+  #page #header #header-wrapper,
+  #page #header #header-wrapper * {
+    background: none;
+  }
+
+  #bp-default #header {
+    margin-bottom: 0;
+    background: none;
+  }
+
+  #bp-default #header #navigation #nav li.current_page_item,
+  #bp-default #header #navigation #nav li.current_page_item * {
+    background-color: #2f3f75 !important;
+  }
+
+  #bp-default #container * {
+    background-color: transparent !important;
+  }
+
+  #bp-default #container {
+    background-color: #222 !important;
+    border: none;
+  }
+
+  #bp-default #container #sidebar {
+    background-color: #292929 !important;
+  }
+
+  .generic-button.blog-button.visit a,
+  input[type='submit'] {
+    background: none !important;
+  }
+
+  .tab ul.login {
+    float: none;
+    width: 8em;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 13em;
+  }
+
+  .tab ul.login #toggle {
+    background: var(--rounded-card-color) !important;
+    border-bottom-left-radius: 1em !important;
+    border-bottom-right-radius: 1em !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tab ul.login #toggle a {
+    background-color: transparent !important;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tab ul.login .left,
+  .tab ul.login .right {
+    width: 0 !important;
+    display: none !important;
+  }
+
+  .tab ul.login #toggle:hover {
+    background-color: #363636 !important;
+  }
+
+  #sidebar-wp-submit {
+    background: #363e53 !important;
+  }
+
+  #sidebar-wp-submit:hover {
+    background-color: #20242f !important;
   }
 
   a {
-    color: #88bfff !important;
+    color: var(--link-color) !important;
   }
   a:hover {
-    color: #d4e8ff !important;
+    color: var(--link-hover-color) !important;
   }
 
   .message-box-header,
   .message-box-header *,
-  .entry-content h2 {
-    background-color: #313131 !important;
+  .entry-content h2,
+  #menu-main-nav-menu h3,
+  footer#header-footer {
+    background-color: var(--header-color) !important;
   }
 
+  #menu-main-nav-menu h3 * {
+    background-color: transparent !important;
+  }
+
+  /*
+  tiny bylines under entries on course pages
+  */
   .entry-byline,
   .entry-byline * {
     color: #bbb !important;
   }
 
-  footer#header-footer {
-    background-color: #353535 !important;
+  /*
+  The "Annu en webbplats som drivs av coursepress" tag in the footer
+  */
+  #footer ul li:last-of-type,
+  #footer ul li:last-of-type * {
+    background-color: var(--rounded-card-color) !important;
   }
 
   .question .message-box-content,
   .question .message-box-content * {
-    background-color: #262b33 !important;
+    background-color: var(--question-box-color) !important;
   }
 
-  #footer ul li:last-of-type,
-  #footer ul li:last-of-type * {
-    background-color: #0d0d0d !important;
+  .message-box-content p em {
+    font-weight: bold;
+    display: block;
+    text-decoration: underline;
   }
 
+  /*
+  Splits off each contact in the contact section listed under certain courses
+  */
   .message-box-content dl:first-of-type {
     border-bottom: 1px solid gray;
   }
@@ -54,14 +181,17 @@
   .message-box-content dl dt {
     font-weight: bold !important;
     font-size: 1.1em !important;
-    color: #a8a8a8 !important;
+    color: #fff !important;
     text-decoration: underline !important;
   }
 
   .message-box-content dl dd:first-of-type {
-    text-align: center !important;
     font-size: 1.2em !important;
     color: #bed6f4 !important;
+  }
+
+  .message-box-content dl:last-of-type dd:first-of-type {
+    padding-top: 1em;
   }
 
   a.previousBtn *,
@@ -74,11 +204,17 @@
     background-color: #3e3e3e !important;
   }
 
-  #to-coursepress * {
-    background-color: transparent !important;
+  #to-coursepress a:hover {
+    background: linear-gradient(to right, #292929, transparent);
   }
 
-  #to-coursepress:hover {
-    background-color: #3e3e3e !important;
+  #to-coursepress *,
+  #cp-clipper-top .tab,
+  #cp-clipper-top .tab *,
+  .sideBarWrapper * {
+    background-color: transparent !important;
+  }
+  .sideBarWrapper {
+    background-color: #222 !important;
   }
 }

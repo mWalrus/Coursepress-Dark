@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name Coursepress Dark
 @namespace Waalrus
-@version 0.6.1
+@version 1.0.0
 @homepageURL https://github.com/mWalrus/Coursepress-Dark
 @updateURL https://github.com/mWalrus/Coursepress-Dark/courespress.user.css
 @license GPL-3.0
@@ -13,21 +13,44 @@
   :root {
     --main-bg-color: #1e1e1e;
     --link-color: #88bfff;
-    --link-hover-color: #ca71f7;
+    --link-hover-color: #ffe300;
     --header-color: #353535;
     --question-box-color: #262b33;
     --text-color: #d9d9d9;
     --border-color: #494848;
     --rounded-card-color: #0d0d0d;
-    --nav-hover-color: #292929;
+    --nav-hover-color: #181818;
     --inner-container-color: #222;
     --inner-container-color-two: #292929;
+    --list-link-hover-color: #161616;
+    --homepage-tab-hover-color: #000;
+    --input-select-bg-color: #181818;
   }
+
   * {
+    border-color: var(--border-color) !important;
+  }
+
+  body,
+  html,
+  .message-box-content,
+  #page,
+  form#searchform,
+  #colophon #site-generator,
+  #bp-default,
+  #header {
+    background: none;
     background-color: var(--main-bg-color) !important;
     color: var(--text-color) !important;
-    border-color: var(--border-color) !important;
     font-family: 'Open Sans', sans-serif;
+  }
+
+  form input,
+  form select,
+  input,
+  select {
+    background: var(--input-select-bg-color);
+    color: var(--text-color);
   }
 
   /* header font */
@@ -46,42 +69,82 @@
     font-family: 'Montserrat', sans-serif;
   }
 
-  /* removing background on interfering elements */
-  #cp-slider-top,
-  #cp-slider-top *,
-  #bp-default #container :not(.activity-type-tabs) :not(.activity),
-  a.previousBtn *,
-  a.nextBtn *,
-  #to-coursepress *,
-  #cp-clipper-top .tab,
-  #cp-clipper-top .tab *,
-  .sideBarWrapper *,
-  #menu-main-nav-menu h3 * {
+  #menu-main-nav-menu,
+  .message-box .message-box-content,
+  .menu-huvudmeny-container {
+    background-color: var(--inner-container-color) !important;
+  }
+
+  table tr {
+    background-color: var(--inner-container-color) !important;
+  }
+
+  #searchform,
+  #menu-main-nav-menu *,
+  .menu-huvudmeny-container * {
+    border: none !important;
+  }
+
+  #searchform #s.field,
+  h1.entry-title {
+    color: var(--text-color);
+  }
+
+  .entry-content .widget .widgettitle,
+  .hidden-xs.css-1ig3yiy *,
+  .navbar-default,
+  .item-list-tabs,
+  .pagination {
     background-color: transparent !important;
   }
 
-  .item-meta .activity {
+  .activity-list li.load-more {
+    background: var(--inner-container-color-two) !important;
+    border-right: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .item-list-tabs:first-of-type {
+    background-color: var(--main-bg-color) !important;
+  }
+
+  .item-list-tabs li a {
+    background-color: var(--inner-container-color) !important;
+  }
+
+  .navBarDefault {
+    box-shadow: none;
+    border-bottom: 1px solid;
+  }
+
+  .current-menu-item,
+  .menu-item a:hover,
+  .jl-link-list a:hover,
+  .sideBarUL .item > a:hover,
+  .hideFrontLine .active > a,
+  .jl-link-list a:hover,
+  .jl-link-list a:focus {
+    background-color: var(--list-link-hover-color) !important;
+    color: var(--link-hover-color) !important;
+  }
+
+  nav#access {
+    background: var(--rounded-card-color);
+  }
+
+  nav#access .menu ul li a:hover {
+    background: var(--header-color);
+  }
+
+  .item-meta .activity,
+  #branding #s:focus {
     background: var(--rounded-card-color) !important;
   }
 
   #cp-slider {
     background-color: var(--main-bg-color) !important;
     border-bottom: 3px solid var(--border-color) !important;
-  }
-
-  #bp-default,
-  #page #header #header-wrapper,
-  #page #header #header-wrapper *,
-  a.button,
-  a.group-button {
-    background: none !important;
-    background-color: transparent !important;
-  }
-
-  a.button:hover,
-  a.group-button:hover {
-    background: black !important;
-    background-color: black !important;
   }
 
   #bp-default #header {
@@ -102,7 +165,9 @@
   sets color of current tab button */
   #bp-default #header #navigation #nav li.current_page_item,
   #bp-default #header #navigation #nav li.current_page_item * {
-    background-color: #2f3f75 !important;
+    background-color: var(--list-link-hover-color) !important;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
   }
 
   #bp-default #container {
@@ -118,27 +183,51 @@
     color: #adadad !important;
   }
 
-  /* ================ currently not working ================== */
-  input[type='submit'] {
-    background: none;
+  a {
+    color: var(--link-color) !important;
+  }
+  a:hover,
+  .css-1d6ma2l a:hover {
+    color: var(--link-hover-color) !important;
   }
 
-  input[type='submit']:hover {
-    background: black !important;
+  input[type='submit'],
+  a.button,
+  a.group-button,
+  div.generic-button a {
+    background: none;
+    color: var(--link-color);
   }
-  /* ========================================================= */
+
+  input[type='submit']:hover,
+  a.button:hover,
+  a.group-button:hover,
+  div.generic-button a:hover {
+    background: var(--list-link-hover-color) !important;
+    color: var(--link-hover-color);
+  }
+
+  textarea {
+    background: var(--input-select-bg-color) !important;
+    color: var(--text-color) !important;
+    box-shadow: none !important;
+  }
+
+  #bp_core_whos_online_widget-2 h3 {
+    background: var(--inner-container-color-two) !important;
+  }
+
   .tab {
     top: 0;
     background: none;
   }
 
   .tab ul.login {
-    float: none;
     width: 15em;
     margin: 0;
     padding: 0;
     position: absolute;
-    right: 13em;
+    right: 100px;
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
@@ -148,19 +237,17 @@
     background: var(--rounded-card-color) !important;
     border-bottom-left-radius: 1em !important;
     border-bottom-right-radius: 1em !important;
-    width: 100%;
-    margin: 0;
     padding: 0;
-    text-align: center;
+    text-align: center !important;
   }
 
   .tab ul.login #toggle a {
-    background-color: transparent !important;
+    display: block;
     width: 100%;
     height: 100%;
-    margin: 0;
-    padding: 0;
-    padding-right: 0 !important;
+    padding: 0 !important;
+    top: 0;
+    line-height: 3.5em !important;
   }
 
   .tab ul.login .left,
@@ -174,19 +261,18 @@
     background-color: #363636 !important;
   }
 
-  a {
-    color: var(--link-color) !important;
-  }
-  a:hover {
-    color: var(--link-hover-color) !important;
+  .tab ul.login li:nth-child(2) {
+    background: none !important;
   }
 
   .message-box-header,
-  .message-box-header *,
+  .message-box-header * :not(h2) :not(span),
   .entry-content h2,
   #menu-main-nav-menu h3,
-  footer#header-footer {
+  footer#header-footer,
+  h3.widgettitle {
     background-color: var(--header-color) !important;
+    color: var(--text-color);
   }
 
   /* tiny bylines under entries on course pages */
@@ -195,9 +281,9 @@
     color: #bbb !important;
   }
 
-  /* The "Ännu en webbplats som drivs av coursepress" tag in the footer */
-  #footer ul li:last-of-type,
-  #footer ul li:last-of-type * {
+  /* The "yet another page powered by coursepress" tag in the footer */
+  #footer ul li:last-of-type :not(.widgettitle) :not(.avatar-block),
+  #footer ul li:last-of-type * :not(.widgettitle) {
     background-color: var(--rounded-card-color) !important;
   }
 
@@ -233,6 +319,11 @@
     padding-top: 1em;
   }
 
+  a.previousBtn,
+  a.nextBtn {
+    background-color: var(--inner-container-color-two);
+  }
+
   a.previousBtn:hover,
   a.nextBtn:hover {
     background-color: var(--nav-hover-color) !important;
@@ -246,21 +337,38 @@
     background-color: var(--inner-container-color) !important;
   }
 
-  #footer #footer-widgets,
-  #footer #footer-widgets * {
+  #footer #footer-widgets {
     border: none;
     background-color: var(--inner-container-color) !important;
   }
 
+  .activity-type-tabs ul li a {
+    background-color: var(--main-bg-color) !important;
+  }
+
   html
-    body#bp-default.directory.activity.logged-in.js
+    body#bp-default.page.page-id-212.page-template.page-template-anonymous-page-php.js
     div#container
     div#content
     div.padder
-    div.item-list-tabs.activity-type-tabs
-    ul
-    li
-    a {
-    background-color: var(--main-bg-color) !important;
+    div#blog-page.page
+    div#post-212.post-212.page.type-page.status-publish.hentry
+    div.entry
+    article.message-box.question
+    header.message-box-header {
+    background-color: transparent !important;
+  }
+
+  html
+    body#bp-default.page.page-id-212.page-template.page-template-anonymous-page-php.js
+    div#container
+    div#content
+    div.padder
+    div#blog-page.page
+    div#post-212.post-212.page.type-page.status-publish.hentry
+    div.entry
+    article.message-box.question
+    div.message-box-content {
+    padding: 10px;
   }
 }
